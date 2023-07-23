@@ -1,0 +1,476 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.contanar {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(images/shutterstock_160261619.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+.navbanar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 60px;
+    cursor: pointer;
+}
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    color: white;
+    margin-left: 60px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+nav ul li a:hover {
+    color: #EDB500;
+    transition: 0.5s;
+}
+.second_row {
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+.second_col {
+    flex-basis: 50%;
+}
+.second_col h1 {
+    color: #fff;
+    font-size: 100px;
+}
+.second_col p {
+    color: #fff;
+    font-size: 17px;
+    line-height: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+button {
+    width: 180px;
+    color: #fff;
+    font-size: 15px;
+    padding: 12px 0;
+    background: transparent;
+    border: 2px solid #EDB500;
+    font-weight: bold;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+}
+button:hover {
+    background-color: #EDB500;
+    color: black;
+    transition: 0.5s;
+}
+
+.pop2 {
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 85px;
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+.container {
+    display: flex;
+}
+.container2 {
+    display: flex;
+}
+.card {
+    height: 500px;
+    margin: 100px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+.card2 {
+    height: 500px;
+    margin: 100px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+.card img {
+    height: 500px;
+    width: 350px;
+    border-radius: 50px;
+    transition: .5s;
+}
+.card2 img {
+    height: 500px;
+    width: 350px;
+    border-radius: 50px;
+    transition: .5s;
+}
+.intro {
+    height: 200px;
+    width: 600px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: relative;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+    /* bottom: 240px; */
+    transition: .1s;
+}
+.intro2 {
+    height: 200px;
+    width: 600px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: relative;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+    /* bottom: 240px; */
+    transition: .1s;
+}
+.intro h1 {
+    margin: 10px;
+    font-size: 40px;
+}
+.intro2 h1 {
+    margin: 10px;
+    font-size: 40px;
+}
+.intro p {
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+.intro2 p {
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+.card2:hover {
+    cursor: pointer;
+}
+.card:hover {
+    cursor: pointer;
+}
+.card2:hover .intro2 {
+    height: 220px;
+    bottom: 240px;
+    background: black;
+    transition: .7s;
+}
+.card:hover .intro {
+    height: 220px;
+    bottom: 240px;
+    background: black;
+    transition: .7s;
+}
+.card2:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+.card:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+.card2:hover img {
+    transform: scale(1.1) rotate(-4deg);
+}
+.card:hover img {
+    transform: scale(1.1) rotate(-4deg);
+}
+body {
+    background-color: black;
+}
+
+@keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+}
+.section1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.section1 h1 {
+    margin: 3px;
+    font-size: 40px;
+}
+.snow-leopard {
+    display: flex;
+    justify-content: center;
+}
+.shar {
+    color: #EDB500;
+}
+.sharr {
+    color: #EDB500;
+}
+.sharrr {
+    color: #a1790d;
+}
+.snow-leopard img {
+    width: 40%;
+    border-radius: 50px;
+    justify-content: end;
+    margin: 50px;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 4s ease-in-out infinite;
+}
+.title1 {
+    color: white;
+    margin: 50px;
+    font-size: 20px;
+    margin-top: 100px;
+}
+.title1 h1 {
+    color: #EDB500;
+}
+.argali {
+    display: flex;
+    justify-content: center;
+}
+.title2 {
+    color: white;
+    font-size: 20px;
+    margin: 50px;
+    margin-top: 100px;
+}
+.title2 h1 {
+    color: #EDB500;
+}
+.argali img {
+    width: 40%;
+    border-radius: 50px;
+    margin: 50px;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 3s ease-in-out infinite;
+}
+.Bactrian-camel {
+    display: flex;
+    justify-content: center;
+}
+.title3 h1 {
+    color: #EDB500;
+}
+.title3 {
+    color: white;
+    font-size: 20px;
+    margin: 50px;
+    margin-top: 100px;
+}
+.Bactrian-camel img {
+    width: 30%;
+    border-radius: 50px;
+    margin: 50px;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 4s ease-in-out infinite;
+}
+.horse {
+    display: flex;
+    justify-content: center;
+}
+.title4 {
+    color: white;
+    font-size: 20px;
+    margin: 50px;
+    margin-top: 100px;
+}
+.title4 h1 {
+    color: #EDB500;
+}
+.horse img {
+    width: 30%;
+    border-radius: 50px;
+    margin: 50px;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 3s ease-in-out infinite;
+}
+.Saiga-antelope {
+    display: flex;
+    justify-content: center;
+}
+.title5 {
+    color: white;
+    font-size: 20px;
+    margin: 50px;
+}
+.title5 h1 {
+    color: #EDB500;
+}
+.Saiga-antelope img {
+    width: 40%;
+    margin: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 4s ease-in-out infinite;
+}
+.Flag {
+    display: flex;
+    justify-content: center;
+}
+.mongl1 {
+    color: white;
+    font-size: 20px;
+    margin: 50px;
+}
+.mongl1 h1 {
+    color: #fff;
+    margin-top: 40px;
+}
+.Flag img {
+    width: 40%;
+    margin: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    transform: translateY(0px);
+    animation: float 4s ease-in-out infinite;
+}
+.population {
+    display: flex;
+    justify-content: center;
+}
+.poptitle {
+    color: white;
+    font-size: 20px;
+    margin: 50px;
+}
+.poptitle h1 {
+    color: #fff;
+    margin-top: 40px;
+}
+.population img {
+    width: 20%;
+    margin: 50px;
+    border-radius: 100px;
+    overflow: hidden;
+    transform: translateY(0px);
+    animation: float 4s ease-in-out infinite;
+}
+.section2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    color: #EDB500;
+    margin-bottom: 25px;
+}
+.section2 h1 {
+    font-size: 40px;
+}
+.img-holder img {
+    width: 360px;
+    border-radius: 50px;
+}
+.first-row {
+    display: flex;
+    justify-content: center;
+}
+.img-holder {
+    margin: 30px;
+    border-radius: 50px;
+    /* transition: transform .4s; */
+    transition: 0.3s;
+}
+.img-holder:hover {
+    transform: scale(0.9);
+    /* transform: translateY(-2.5rem); */
+}
+.img-holder h1 {
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+}    
+.footer{
+    margin-top: 30px;
+    background:#000;
+    padding:30px 0px;
+    font-family: Arial;
+    text-align:center;
+}
+.footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+}
+    
+.footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+}
+    
+.footer .row a:hover{
+    color:#fff;
+}    
+.footer .row ul{
+    width:100%;
+}
+    
+.footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+}
+    
+.footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+}
+    
+@media (max-width:720px){
+.footer{
+    text-align:left;
+    padding:5%;
+}
+.footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+}
+.footer .row a i{
+    margin:0% 3%;
+}
+}

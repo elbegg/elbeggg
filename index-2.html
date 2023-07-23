@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About Me</title>
+    <style>
+    * {
+        font-family: Arial;
+        padding: 0;
+        margin: 0;
+    }
+    .contanar {
+        box-sizing: border-box;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .navbanar {
+        height: 12%;
+        display: flex;
+        align-items: center;
+    }
+    .logo {
+        width: 60px;
+        cursor: pointer;
+    }
+    .menu-icon {
+        width: 30px;
+        cursor: pointer;
+        margin-left: 40px;
+    }
+    nav {
+        flex: 1;
+        text-align: right;
+    }
+    nav ul {
+        float: right;
+        margin-right: 20px;
+    }
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        color: white;
+        margin-left: 60px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+    }
+    nav ul li a:hover {
+        color: #EDB500;
+        transition: 0.5s;
+    } 
+    body{
+        margin:0;
+        overflow-x:hidden;
+    }    
+    .footer{
+        margin-top: 30px;
+        background:#000;
+        padding:30px 0px;
+        font-family: Arial;
+        text-align:center;
+    }
+    .footer .row{
+        width:100%;
+        margin:1% 0%;
+        padding:0.6% 0%;
+        color:gray;
+        font-size:0.8em;
+    }
+        
+    .footer .row a{
+        text-decoration:none;
+        color:gray;
+        transition:0.5s;
+    }
+        
+    .footer .row a:hover{
+        color:#fff;
+    }    
+    .footer .row ul{
+        width:100%;
+    }
+        
+    .footer .row ul li{
+        display:inline-block;
+        margin:0px 30px;
+    }
+        
+    .footer .row a i{
+        font-size:2em;
+        margin:0% 1%;
+    }
+        
+    @media (max-width:720px){
+    .footer{
+        text-align:left;
+        padding:5%;
+    }
+    .footer .row ul li{
+        display:block;
+        margin:10px 0px;
+        text-align:left;
+    }
+    .footer .row a i{
+        margin:0% 3%;
+    }
+    }
+    .second_row {
+        display: flex;
+        height: 88%;
+        align-items: center;
+    }
+    .second_col {
+        flex-basis: 50%;
+    }
+    .second_col h1 {
+        color: #fff;
+        font-size: 100px;
+    }
+    .second_col p {
+        color: #fff;
+        font-size: 17px;
+        line-height: 15px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    /* button {
+        width: 180px;
+        color: #fff;
+        font-size: 12px;
+        padding: 12px 0;
+        background: transparent;
+        border: 2px solid #EDB500;
+        font-weight: bold;
+        border-radius: 20px;
+        outline: none;
+        margin-top: 30px;
+    }
+    button:hover {
+        background-color: #EDB500;
+        color: black;
+        transition: 0.5s;
+    } */
+    body {
+        background-color: black;
+    }
+    .abt {
+        display: flex;
+        justify-content: center;
+    }
+    .me {
+        color: white;
+        font-size: 25px;
+        margin: 50px;
+        margin-left: 10%;
+    }
+    .me h1 {
+        color: #EDB500;
+        margin-top: 30%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .abt img {
+        width: 35%;
+        margin: 50px;
+    }
+    button {
+    width: 180px;
+    color: #fff;
+    font-size: 15px;
+    padding: 12px 0;
+    background: transparent;
+    border: 2px solid #EDB500;
+    font-weight: bold;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 20px;
+}
+button:hover {
+    background-color: #EDB500;
+    color: black;
+    transition: 0.5s;
+}
+span {
+    color: brown;
+    font-weight: bold;
+}
+.img-hulder {
+    transition: 0.3s;
+}
+.img-hulder:hover {
+    transform: scale(1.15);
+}
+.raze {
+    transition: 0.1s;
+}
+.raze:hover {
+    transform: scale(1.15);
+}
+        </style>
+</head>
+<body>
+    <div class="contanar">
+        <div class="navbanar">
+            <img src="images/logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="">About me</a></li>
+                    <li><a href="index-3.html">Contact</a></li>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon">
+        </div>
+
+<!-- footer heseg -->
+
+        <div class="abt">
+            <div class="me">
+                <h1>Hi. I'm <span style="color: brown;">Elbeg</span></h1>
+                <p>I'm <span>14 years old</span> and I'm learning C++,C programming, HTML/CSS.</p>
+                <a href="index-3.html">
+                    <button>Contact Me</button>
+                </a>
+                <a href="https://youtu.be/48gFVayQA-Y" style="margin-left: 20px;" target="_blank">
+                    <button>Kill Me</button>
+                </a>
+            </div>
+            <img src="New folder/raze-valorant.gif" class="raze">
+        </div>
+
+        <div class="games">
+            <div style="margin-top: 4%; font-size: 20px; color: #EDB500; display: flex; justify-content: center;" class="what">
+                <h1>Games to play if you have no friends</h1>
+            </div>
+            <div style="display: flex; justify-content: center;" class="bozo">
+                <img class="img-hulder" style="margin: 10%; border-radius: 80px; width: 20%;" src="New folder/minecrft.png" alt="">
+                <img class="img-hulder" style="margin: 10%; border-radius: 80px; width: 20%;" src="New folder/valorant.jpg" alt="">
+                <img class="img-hulder" style="margin: 10%; border-radius: 80px; width: 20%;" src="New folder/roblox.png" alt="">
+            </div>
+        </div>
+
+<footer>
+    <div class="footer">
+    <div class="row">
+        <a href="https://www.facebook.com/erhembayar.elbeg" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://youtu.be/48gFVayQA-Y" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://youtu.be/48gFVayQA-Y" target="_blank"><i class="fa fa-youtube"></i></a>
+    </div>
+    
+    <div class="row">
+         Copyright © 2023 - All rights reserved 
+        </div>
+     </div>
+    </footer>
+    
+</body>
+</html>
