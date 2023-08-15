@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Guessing Game</title>
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="game2.css" />
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    background-color: #7786f5;
+  }
+  .wrapper {
+    position: absolute;
+    width: 90%;
+    max-width: 37em;
+    background-color: #ffffff;
+    padding: 7em 3em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    border-radius: 1em;
+  }
+  .controls-container {
+    background-color: #7786f5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+  }
+  #start {
+    font-size: 1.2em;
+    padding: 1em 3em;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 2em;
+    cursor: pointer;
+  }
+  #letter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em 0.4em;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  #letter-container button {
+    background-color: #ffffff;
+    border: 2px solid #7786f5;
+    color: #7786f5;
+    outline: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    height: 3em;
+    width: 3em;
+  }
+  #letter-container .correct {
+    background-color: #008000;
+    color: #ffffff;
+    border: 2px solid #008000;
+  }
+  #letter-container .incorrect {
+    background-color: #8a8686;
+    color: #ffffff;
+    border: 2px solid #8a8686;
+  }
+  .hint-ref {
+    margin-bottom: 1em;
+  }
+  .hint-ref span {
+    font-weight: 600;
+  }
+  #chanceCount {
+    margin: 1em 0;
+    position: absolute;
+    top: 0.62em;
+    right: 2em;
+  }
+  #word {
+    font-weight: 600;
+    margin: 1em 0 2em 0;
+  }
+  #word span {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .hide {
+    display: none;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="hint-ref">
+        <div id="wordHint">
+          <span>Hint: </span> <span id="hint">Rise suddenly</span>
+        </div>
+      </div>
+      <div id="user-input-section">
+        <div id="displayWord"></div>
+
+        <div id="chanceCount">Chances Left: 5</div>
+      </div>
+      <div id="message"></div>
+      <div id="letter-container" class="">
+        <button class="letters" onclick="usegShalga('a')">A</button>
+        <button class="letters" onclick="usegShalga('b')">B</button>
+        <button class="letters" onclick="usegShalga('c')">C</button>
+        <button class="letters" onclick="usegShalga('d')">D</button>
+        <button class="letters" onclick="usegShalga('e')">E</button>
+        <button class="letters" onclick="usegShalga('f')">F</button>
+        <button class="letters" onclick="usegShalga('g')">G</button>
+        <button class="letters" onclick="usegShalga('h')">H</button>
+        <button class="letters" onclick="usegShalga('i')">I</button>
+        <button class="letters" onclick="usegShalga('j')">J</button>
+        <button class="letters" onclick="usegShalga('k')">K</button>
+        <button class="letters" onclick="usegShalga('l')">L</button>
+        <button class="letters" onclick="usegShalga('m')">M</button>
+        <button class="letters" onclick="usegShalga('n')">N</button>
+        <button class="letters" onclick="usegShalga('o')">O</button>
+        <button class="letters" onclick="usegShalga('p')">P</button>
+        <button class="letters" onclick="usegShalga('q')">Q</button>
+        <button class="letters" onclick="usegShalga('r')">R</button>
+        <button class="letters" onclick="usegShalga('s')">S</button>
+        <button class="letters" onclick="usegShalga('t')">T</button>
+        <button class="letters" onclick="usegShalga('u')">U</button>
+        <button class="letters" onclick="usegShalga('v')">V</button>
+        <button class="letters" onclick="usegShalga('w')">W</button>
+        <button class="letters" onclick="usegShalga('x')">X</button>
+        <button class="letters" onclick="usegShalga('y')">Y</button>
+        <button class="letters" onclick="usegShalga('z')">Z</button>
+      </div>
+    </div>
+    <!-- <div class="controls-container">
+      <div id="result"></div>
+      <div id="word"></div>
+      <button id="start">Start</button>
+    </div> -->
+    <!-- Script -->
+    <script>
+        // 1. Үгийн жагсаалтаа үүсгэнэ
+const words = [
+    {
+        word: "Apple",
+        hint: "Бөөрөнхий хэлбэртэй амттай жимс",
+    },
+    {
+        word: "pineapple",
+        hint: "Боргоцой + Алим",
+    },
+    {
+        word: "jump",
+        hint: "Гэнэт дээшлэх",
+    },
+
+]
+// 2. Санамсаргүй байдлаар жагсаалтаас сонгоно
+// 0 - 2 
+const randomIndex = Math.floor(Math.random() * 3)
+const randomWord = words[randomIndex]
+
+console.log("randomWord", randomWord)
+
+// hariu.innerHTML
+
+// 3. Санамсаргүй сонгосон үгийн урттай тэнцүү
+// _ зураас харуулна , Хинт харуулна
+const displayWord = document.getElementById("displayWord")
+console.log('displayWord', displayWord, randomWord)
+for (let i = 0; i < randomWord.word.length; i++) {
+    displayWord.append("_")
+}
+const hint = document.getElementById("hint")
+hint.textContent = randomWord.hint
+// 4. Товч дарах үед функц ажиллана.
+// Функц нь Санамсаргүй сонгосон үг
+//  дотор дарсан үсэн
+// байна уу шалгана
+const zuvTaasanUsegnuud = []
+const ugiigDelgetsendUzuul = () => {
+    for (let i = 0; i < randomWord.word.length; i++) {
+        const shalgahUseg = randomWord.word[i]
+        console.log(zuvTaasanUsegnuud, shalgahUseg)
+        if (zuvTaasanUsegnuud.includes(shalgahUseg)) {
+            console.log('ene useg oldson', shalgahUseg)
+            displayWord.append(shalgahUseg)
+        } else {
+            displayWord.append("_")
+        }
+    }
+}
+// "apple" => "a"
+const ugendUsegOrsonuu = (useg) => {
+    for (let i = 0; i < randomWord.word.length; i++) {
+        const shalgahUseg = randomWord.word[i]
+        if (shalgahUseg === useg) {
+            zuvTaasanUsegnuud.push(useg)
+            break;
+        }
+    }
+    console.log("zuvTaasanUsegnuud", zuvTaasanUsegnuud)
+}
+const usegShalga = (useg) => {
+    console.log("usegShalga ajillaj bn==>", useg)
+    displayWord.textContent = ""
+    ugendUsegOrsonuu(useg);
+    ugiigDelgetsendUzuul()
+
+
+}
+// 5. Үсэг таасан бол орсон бол тухайн үсгийг харуулна
+// 6. Үсэг таагаагүй бол алдааг нь тоолно
+// 7. Алдаа 5-с хэтэрсэн бол Хожигдоно
+// 8. Үг бүрэн таасан эсэхийг шалгана
+    </script>
+  </body>
+</html>

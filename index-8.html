@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+        .contanar {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(images/shutterstock_160261619.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+.navbanar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 60px;
+    cursor: pointer;
+}
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    color: white;
+    margin-left: 60px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+nav ul li a:hover {
+    color: #EDB500;
+    transition: 0.5s;
+}
+        .img-holder img {
+    width: 250px;
+    border-radius: 50px;
+}
+.first-row {
+    display: flex;
+    justify-content: center;
+}
+.img-holder {
+    margin: 30px;
+    border-radius: 50px;
+    /* transition: transform .4s; */
+    transition: 0.3s;
+}
+.img-holder:hover {
+    transform: scale(1.12);
+    /* transform: translateY(-2.5rem); */
+}
+.img-holder h1 {
+    list-style: none;
+    text-decoration: none;
+    font-size: 25px;
+}
+.footer{
+    margin-top: 30px;
+    background:#000;
+    padding:30px 0px;
+    font-family: Arial;
+    text-align:center;
+}
+.footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+}
+    
+.footer .row a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+}
+    
+.footer .row a:hover{
+    color:#fff;
+}    
+.footer .row ul{
+    width:100%;
+}
+    
+.footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+}
+    
+.footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+}
+    
+@media (max-width:720px){
+.footer{
+    text-align:left;
+    padding:5%;
+}
+.footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+}
+.footer .row a i{
+    margin:0% 3%;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="contanar">
+        <div class="navbanar">
+            <img src="logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index-2.html">About me</a></li>
+                    <li><a href="index-3.html">Contact</a></li>
+                    <li><a href="index-8.html">Games</a></li>
+                </ul>
+            </nav>
+            <img src="menu.png" class="menu-icon">
+        </div>
+
+    <!-- <p style="color: darkgray; display: flex; justify-content: center; font-size: 25px;">Click on the image to play.</p> -->
+    <div class="first-row">
+        <div class="img-holder">
+            <a href="index-7.html" target="_blank">
+                <img src="rock paper scissors game icon.png" alt="">
+            </a>
+                <h1 style="color: white; display: flex; justify-content: center;">rock paper scissors</h1>
+        </div>
+        <div class="img-holder">
+            <a href="index-4.html" target="_blank">
+            <img src="number guessing game.png" alt="">
+        </a>
+            <h1 style="color: white; display: flex; justify-content: center;">Guess the Number</h1>
+
+        </div>
+        <div class="img-holder">
+            <a href="index-5.html" target="_blank">
+            <img src="word guessing game icon.webp" alt="">
+        </a>
+            <h1 style="color: white; display: flex; justify-content: center;">Guess the Word</h1>
+        </div>
+        <div class="img-holder">
+            <a href="index-6.html" target="_blank">
+            <img src="6168860.png" alt="">
+        </a>
+            <h1 style="color: white; display: flex; justify-content: center;">Memory Card</h1>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+        <div class="row">
+            <a href="https://www.facebook.com/erhembayar.elbeg" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://youtu.be/48gFVayQA-Y" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://youtu.be/48gFVayQA-Y" target="_blank"><i class="fa fa-youtube"></i></a>
+        </div>
+        
+        <div class="row">
+             Copyright © 2023 - All rights reserved 
+            </div>
+         </div>
+        </footer>
+</body>
+</html>

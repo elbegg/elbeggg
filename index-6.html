@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="game3.css" />
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-gap: 10px;
+  }
+  .card {
+    width: 80px;
+    height: 100px;
+    background-color: #f1f1f1;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .card.taarsan {
+    cursor: default;
+    background-color: #66bb6a;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  button:hover {
+    background-color: #1976d2;
+  } 
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Memory Card Game</h1>
+      <div class="board" id="board"></div>
+      <button onclick="togloomEhluuleh()">Эхлэх</button> <!-- Энэ товчин дээр дарахад ажиллах тохирох функцийг дуудаарай -->
+    </div>
+    <script>
+        const zuragnuud = ["🐶", "🐱", "🐭", "🐰", "🦊", "🐻", "🐼", "🐨"];
+
+const HusnegtHolih = (massiv) => massiv.sort(() => 0.5 - Math.random());
+
+const togloomEhluuleh = () => {
+  const board = document.getElementById("board");
+  board.innerHTML = "";
+
+  const holisonZuragnuud = [...zuragnuud, ...zuragnuud];
+  HusnegtHolih(holisonZuragnuud);
+
+  for (const zurag of holisonZuragnuud) {
+    const card = cardUusgeh(zurag);
+    board.appendChild(card);
+  }
+};
+
+const cardUusgeh = (zurag) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.textContent = "?";
+  card.addEventListener("click", () => cardDelgeh(card, zurag));
+  return card;
+};
+
+let ehniiDelgesenCard = null;
+let hoyrtDelgesenCard = null;
+
+const cardDelgeh = (card, zurag)=> {
+  if (!ehniiDelgesenCard) {
+    ehniiDelgesenCard = card;
+    ehniiDelgesenCard.textContent = zurag;
+  } else if (!hoyrtDelgesenCard) {
+    hoyrtDelgesenCard = card;
+    hoyrtDelgesenCard.textContent = zurag;
+    setTimeout(() => delgesenCardShalgah(), 500);
+  }
+}
+
+const delgesenCardShalgah = () => {
+  if(ehniiDelgesenCard.textContent == hoyrtDelgesenCard.textContent) {
+      ehniiDelgesenCard.classList.add("taarsan");
+      hoyrtDelgesenCard.classList.add("taarsan");
+      ehniiDelgesenCard = null;
+      hoyrtDelgesenCard = null;
+      hojsonEseh();
+  } else cardaaNuuh();
+  /*Дэлгэсэн 2 карт тохирч байгаа эсэхийг шалгах функц бичээрэй. 
+  Таарсан картнуудыг "taarsan" гэсэн class-тай элеметүүд дээр 
+  нэмээд дараа нь хожсон эсэхийг шалгана. Жишээ нь ehniiDelgesenCard.classList.add("taarsan");
+  Таараагүй тохиолдолд картуудыг буцаагаад нууна.*/
+}
+
+const cardaaNuuh = () => {
+  ehniiDelgesenCard.textContent = "?";
+  hoyrtDelgesenCard.textContent ="?";
+  ehniiDelgesenCard = null;
+  hoyrtDelgesenCard = null;
+   //2 карт ижил биш байвал буцаагаад ? болгодог функц бичээрэй
+}
+
+const hojsonEseh=()=> {
+  const taarsanCardnuud = document.querySelectorAll(".card.taarsan");
+  //хожсон эсэхийг шалгах функцийн дутуу зүйлийг нь нөхөөд хийгээрэй.
+  if(zuragnuud.length*2 == taarsanCardnuud.length) {
+      setTimeout(() => { 
+        alert("Баяр хүргэе, Та яллаа"); //Хэрвээ хожсон бол ийм мессеж гарч ирнэ
+      }, 500);
+    }
+}
+    </script>
+  </body>
+</html>

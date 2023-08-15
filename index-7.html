@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <h1>Хайч, Чулуу, Даавуу</h1>
+    <p>Үйлдлээ сонгоно уу:</p>
+    <button onclick="play('Чулуу')">Чулуу</button>
+    <button onclick="play('Цаас')">Даавуу</button>
+    <button onclick="play('Хайч')">Хайч</button>
+    <p id="result"></p>
+
+    <script>
+      function getComputerMove() {
+        const moves = ["Чулуу", "Цаас", "Хайч"];
+        const randomIndex = Math.floor(Math.random() * moves.length);
+        return moves[randomIndex];
+      }
+
+      const play = (playerMove) => {
+        const computerMove = getComputerMove();
+        const resultElement = document.getElementById("result");
+        if (playerMove === computerMove) {
+          resultElement.textContent = "Тэнцлээ!";
+        } else if (
+          (playerMove === "Чулуу" && computerMove === "Хайч") ||
+          (playerMove === "Хайч" && computerMove === "Цаас") ||
+          (playerMove === "Цаас" && computerMove === "Чулуу")
+        ) {
+          resultElement.textContent =
+            "Та яллаа! Комьпютер=" + computerMove + " vs Та=" + playerMove;
+        } else {
+          resultElement.textContent =
+            "Компютер яллаа!  Комьпютер=" +
+            computerMove +
+            " vs Та=" +
+            playerMove;
+        }
+      };
+    </script>
+  </body>
+</html>

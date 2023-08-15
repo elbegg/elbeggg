@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: arial;
+        background-color: #71c2d9;
+    }
+    .container h1 {
+        color: #0a5494;
+    }
+    .container p {
+        color: #2b548a;
+        font-size: 18px;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    .button {
+        cursor: pointer; 
+        padding: 7px; 
+        border-radius: 8px; 
+        border: 2px solid #0a5494; 
+        color: white; 
+        background-color: #0a5494;
+    }
+    .button:hover {
+        color: black;
+        background-color: white;
+        border-color: white;
+        transition: 0.4s;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>Sanasan too he ve</h1>
+    <p>1-100 hoorond baiga toog taagaarai</p>
+    <input style="background-color: white; padding: 8px; border-radius: 8px; border: 1.5px solid black;" id="taasanToo" type="text" placeholder="Toogoo end oruulaarai">
+    <button class="button" onclick="utgaAwahFunkts()">Taah</button>
+    <!-- <p style="color: #0c1f38; margin-left: 30%;">Hint:</p> -->
+    <p>Input-iin utga: <span id="utga"></span></p>
+</div>
+    <script>
+        const randomToo = Math.floor(Math.random() * 100) + 1;
+      function utgaAwahFunkts() {
+        const taasanToo = document.getElementById("taasanToo").value;
+        const utga = document.getElementById("utga");
+        if(taasanToo == randomToo) {
+            utga.textContent = "bayr hurgey";
+        }
+        else if(taasanToo > randomToo) {
+            utga.textContent = "ih baina";
+        } else {
+            utga.textContent = "baga baina";
+        }
+      }
+     
+    </script>
+</body>
+</html>
